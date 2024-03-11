@@ -2,7 +2,7 @@ window.addEventListener("DOMContentLoaded", () => {
   // Preventing the data from getting wiped off from the window while DOM reloads
   axios
     .get(
-      "https://crudcrud.com/api/38fc98425aa94c5aad0cc7fea91fde99/sharpeners"
+      "https://crudcrud.com/api/352048f014644216a433fdfdf104382f/sharpeners"
     )
     .then((response) => {
       for (var i = 0; i < response.data.length; i++) {
@@ -29,8 +29,8 @@ function handleFormSubmit(event) {
   // If a user ID is present, it's an edit, so use PUT, otherwise use POST
   const requestMethod = userDetails._id ? "put" : "post";
   const apiUrl = userDetails._id
-    ? `https://crudcrud.com/api/38fc98425aa94c5aad0cc7fea91fde99/sharpeners/${userDetails._id}`
-    : "https://crudcrud.com/api/38fc98425aa94c5aad0cc7fea91fde99/sharpeners";
+    ? `https://crudcrud.com/api/352048f014644216a433fdfdf104382f/sharpeners/${userDetails._id}`
+    : "https://crudcrud.com/api/352048f014644216a433fdfdf104382f/sharpeners";
 
   // Posting the payload to the server
   axios[requestMethod](apiUrl, userDetails)
@@ -72,7 +72,7 @@ function displayUserOnScreen(userDetails) {
       // Remove from server
       axios
         .delete(
-          `https://crudcrud.com/api/38fc98425aa94c5aad0cc7fea91fde99/sharpeners/${userDetails._id}`
+          `https://crudcrud.com/api/352048f014644216a433fdfdf104382f/sharpeners/${userDetails._id}`
         )
         .then(() => console.log("User deleted from server"))
         .catch((error) => console.log(error));
@@ -87,7 +87,7 @@ function displayUserOnScreen(userDetails) {
     // Remove from server
     axios
       .delete(
-        `https://crudcrud.com/api/38fc98425aa94c5aad0cc7fea91fde99/sharpeners/${userDetails._id}`
+        `https://crudcrud.com/api/352048f014644216a433fdfdf104382f/sharpeners/${userDetails._id}`
       )
       .then(() => console.log("User deleted from server"))
       .catch((error) => console.log(error));
